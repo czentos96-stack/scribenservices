@@ -6,15 +6,15 @@
   <title>Scriben Services</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #0f1419;
-      --paper: #f8f6f2;
-      --accent: #2d5a4a;
-      --accent-light: #4a7c6a;
-      --muted: #5c6b6b;
-      --border: #e2ddd4;
+      --ink: #1a1a1a;
+      --paper: #fafaf9;
+      --accent: #25635a;
+      --accent-light: #2d7a70;
+      --muted: #6b7280;
+      --border: #e5e4e0;
     }
 
     * {
@@ -28,7 +28,7 @@
     }
 
     body {
-      font-family: 'Outfit', sans-serif;
+      font-family: 'Source Sans 3', sans-serif;
       font-weight: 400;
       color: var(--ink);
       background: var(--paper);
@@ -39,146 +39,221 @@
     }
 
     .container {
-      max-width: 720px;
+      max-width: 680px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
-    /* Hero */
-    header {
-      padding: 4rem 0 3rem;
+    /* Nav */
+    nav {
+      padding: 1.5rem 0;
       border-bottom: 1px solid var(--border);
     }
 
-    .logo {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2rem, 5vw, 2.75rem);
-      color: var(--ink);
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .tagline {
-      font-weight: 300;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-
-    /* Main */
-    main {
-      flex: 1;
-      padding: 3rem 0 4rem;
-    }
-
-    .section-title {
-      font-family: 'DM Serif Display', serif;
+    .nav-logo {
+      font-family: 'Libre Baskerville', serif;
       font-size: 1.25rem;
-      color: var(--accent);
-      margin-bottom: 1.25rem;
-      letter-spacing: 0.02em;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
     }
 
-    .contact-grid {
-      display: grid;
+    .nav-links {
+      display: flex;
       gap: 1.5rem;
     }
 
-    .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--border);
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
     }
 
-    .contact-item:last-child {
-      border-bottom: none;
+    .nav-links a:hover {
+      color: var(--accent);
     }
 
-    .contact-label {
+    /* Hero */
+    .hero {
+      padding: 4rem 0 4.5rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(2.25rem, 5vw, 3rem);
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero .tagline {
+      font-weight: 300;
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .hero .cta {
+      display: inline-block;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--paper);
+      background: var(--accent);
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .hero .cta:hover {
+      background: var(--accent-light);
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    section h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 1.75rem;
+    }
+
+    .detail-block {
+      margin-bottom: 1.5rem;
+    }
+
+    .detail-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .detail-label {
       font-size: 0.8rem;
       font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       color: var(--muted);
-      min-width: 5rem;
+      margin-bottom: 0.25rem;
     }
 
-    .contact-value {
+    .detail-value {
+      font-size: 1.05rem;
       color: var(--ink);
     }
 
-    .contact-value a {
+    .detail-value a {
       color: var(--accent);
       text-decoration: none;
       transition: color 0.2s;
     }
 
-    .contact-value a:hover {
+    .detail-value a:hover {
       color: var(--accent-light);
       text-decoration: underline;
     }
 
-    .crn-note {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: var(--muted);
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem 2rem;
+    }
+
+    .contact-links a {
+      font-size: 1.05rem;
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-links a:hover {
+      color: var(--accent-light);
+      text-decoration: underline;
+    }
+
+    .contact-links a::before {
+      margin-right: 0.35em;
+    }
+
+    .contact-email::before {
+      content: "✉";
+    }
+
+    .contact-phone::before {
+      content: "☎";
     }
 
     /* Footer */
     footer {
+      margin-top: auto;
       padding: 2rem 0;
       border-top: 1px solid var(--border);
       text-align: center;
       font-size: 0.875rem;
       color: var(--muted);
     }
-
-    @media (min-width: 600px) {
-      .contact-item {
-        gap: 1.5rem;
-      }
-      .contact-label {
-        min-width: 6rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <header>
+  <nav>
     <div class="container">
-      <h1 class="logo">Scriben Services</h1>
-      <p class="tagline">Professional services, Manchester</p>
+      <a class="nav-logo" href="#">Scriben Services</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>Scriben Services</h1>
+      <p class="tagline">Professional services, Manchester.</p>
+      <a class="cta" href="#contact">Get in touch</a>
     </div>
   </header>
 
   <main>
-    <div class="container">
-      <h2 class="section-title">Contact & details</h2>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <span class="contact-label">Director</span>
-          <span class="contact-value">Jermaine Pinel</span>
+    <section id="about">
+      <div class="container">
+        <h2>About us</h2>
+        <div class="detail-block">
+          <div class="detail-label">Director</div>
+          <div class="detail-value">Jermaine Pinel</div>
         </div>
-        <div class="contact-item">
-          <span class="contact-label">Address</span>
-          <span class="contact-value">14 Netherton Road, Manchester M14 7FN</span>
+        <div class="detail-block">
+          <div class="detail-label">Registered office</div>
+          <div class="detail-value">14 Netherton Road<br>Manchester M14 7FN</div>
         </div>
-        <div class="contact-item">
-          <span class="contact-label">Phone</span>
-          <span class="contact-value"><a href="tel:+443308081320">+44 330 808 1320</a></span>
-        </div>
-        <div class="contact-item">
-          <span class="contact-label">Email</span>
-          <span class="contact-value"><a href="mailto:contact@scribenservices.com">contact@scribenservices.com</a></span>
-        </div>
-        <div class="contact-item">
-          <span class="contact-label">CRN</span>
-          <span class="contact-value">13935933</span>
+        <div class="detail-block">
+          <div class="detail-label">Company registration</div>
+          <div class="detail-value">CRN 13935933</div>
         </div>
       </div>
-      <p class="crn-note">Company Registration Number (England & Wales): 13935933</p>
-    </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="contact-links">
+          <a class="contact-email" href="mailto:contact@scribenservices.com">Email contact@scribenservices.com</a>
+          <a class="contact-phone" href="tel:+443308081320">Phone +44 330 808 1320</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
