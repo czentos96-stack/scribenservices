@@ -1,3 +1,10 @@
 [build]
   publish = "."
   command = "echo 'Static site - no build'"
+
+# Serve index.html for all paths (avoid Netlify "Site not found")
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
