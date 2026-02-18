@@ -83,24 +83,58 @@
 
     /* Hero */
     .hero {
-      padding: 4rem 0 4.5rem;
+      position: relative;
+      padding: 5rem 0 5.5rem;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
       text-align: center;
+      background: var(--ink) url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80') center / cover no-repeat;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(26,26,26,0.75) 0%, rgba(26,26,26,0.6) 100%);
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      .section-image.about-img img,
+      .section-image.contact-img img {
+        height: 200px;
+      }
     }
 
     .hero h1 {
       font-family: 'Libre Baskerville', serif;
       font-size: clamp(2.25rem, 5vw, 3rem);
       font-weight: 700;
-      color: var(--ink);
+      color: #fff;
       letter-spacing: -0.02em;
       margin-bottom: 0.75rem;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
     }
 
     .hero .tagline {
       font-weight: 300;
       font-size: 1.2rem;
-      color: var(--muted);
-      margin-bottom: 2rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 1rem;
+    }
+
+    .hero .intro {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.85);
+      max-width: 520px;
+      margin: 0 auto 2rem;
     }
 
     .hero .cta {
@@ -118,6 +152,29 @@
     .hero .cta:hover {
       background: var(--accent-light);
     }
+
+    /* Section image */
+    .section-image {
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto 2rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .section-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .section-image.about-img { max-height: 280px; }
+    .section-image.about-img img { width: 100%; height: 280px; object-fit: cover; }
+
+    .section-image.contact-img { max-height: 220px; }
+    .section-image.contact-img img { width: 100%; height: 220px; object-fit: cover; }
 
     /* Sections */
     section {
@@ -166,6 +223,20 @@
       text-decoration: underline;
     }
 
+    .section-intro {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+    }
+
+    .contact-intro {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
     .contact-links {
       display: flex;
       flex-wrap: wrap;
@@ -196,6 +267,27 @@
       content: "☎";
     }
 
+    .what-we-do-list {
+      list-style: none;
+    }
+
+    .what-we-do-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    .what-we-do-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
     /* Footer */
     footer {
       margin-top: auto;
@@ -213,6 +305,7 @@
       <a class="nav-logo" href="#">Scriben Services</a>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#what-we-do">What we do</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -222,6 +315,7 @@
     <div class="container">
       <h1>Scriben Services</h1>
       <p class="tagline">Professional services, Manchester.</p>
+      <p class="intro">We deliver reliable, tailored support for businesses and individuals. Based in Manchester, we focus on clarity, quality, and a straightforward approach to getting things done.</p>
       <a class="cta" href="#contact">Get in touch</a>
     </div>
   </header>
@@ -229,7 +323,11 @@
   <main>
     <section id="about">
       <div class="container">
+        <div class="section-image about-img">
+          <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80" alt="Professional workspace" loading="lazy">
+        </div>
         <h2>About us</h2>
+        <p class="section-intro">Scriben Services is a UK-registered company providing professional services from our base in Manchester. We are committed to high standards and clear communication with every client.</p>
         <div class="detail-block">
           <div class="detail-label">Director</div>
           <div class="detail-value">Jermaine Pinel</div>
@@ -245,9 +343,25 @@
       </div>
     </section>
 
+    <section id="what-we-do">
+      <div class="container">
+        <h2>What we do</h2>
+        <p class="section-intro">We work with businesses and individuals who need dependable, professional support. Our services are designed to be clear, efficient, and tailored to your needs.</p>
+        <ul class="what-we-do-list">
+          <li>Professional support and advisory services tailored to your requirements</li>
+          <li>Clear communication and transparent processes from start to finish</li>
+          <li>A focus on quality and reliability, with a straightforward approach</li>
+        </ul>
+      </div>
+    </section>
+
     <section id="contact">
       <div class="container">
+        <div class="section-image contact-img">
+          <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=800&q=80" alt="Contact and communication" loading="lazy">
+        </div>
         <h2>Contact</h2>
+        <p class="contact-intro">For enquiries, quotes, or to discuss how we can help, please get in touch by email or phone. We aim to respond within one working day.</p>
         <div class="contact-links">
           <a class="contact-email" href="mailto:contact@scribenservices.com">Email contact@scribenservices.com</a>
           <a class="contact-phone" href="tel:+443308081320">Phone +44 330 808 1320</a>
