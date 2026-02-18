@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scriben Services</title>
+  <title>Scriben Services Limited</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -83,58 +83,55 @@
 
     /* Hero */
     .hero {
-      position: relative;
-      padding: 5rem 0 5.5rem;
-      min-height: 320px;
-      display: flex;
-      align-items: center;
+      padding: 4rem 0 4rem;
       text-align: center;
-      background: var(--ink) url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80') center / cover no-repeat;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(26,26,26,0.75) 0%, rgba(26,26,26,0.6) 100%);
+      background: var(--paper);
     }
 
     .hero .container {
-      position: relative;
-      z-index: 1;
       width: 100%;
-    }
-
-    @media (max-width: 600px) {
-      .section-image.about-img img,
-      .section-image.contact-img img {
-        height: 200px;
-      }
     }
 
     .hero h1 {
       font-family: 'Libre Baskerville', serif;
       font-size: clamp(2.25rem, 5vw, 3rem);
       font-weight: 700;
-      color: #fff;
+      color: var(--ink);
       letter-spacing: -0.02em;
       margin-bottom: 0.75rem;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
     }
 
     .hero .tagline {
       font-weight: 300;
       font-size: 1.2rem;
-      color: rgba(255,255,255,0.9);
+      color: var(--muted);
       margin-bottom: 1rem;
     }
 
     .hero .intro {
       font-size: 1rem;
       line-height: 1.7;
-      color: rgba(255,255,255,0.85);
+      color: var(--muted);
       max-width: 520px;
       margin: 0 auto 2rem;
+    }
+
+    .banner-image {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      display: block;
+      object-fit: cover;
+      height: 280px;
+    }
+
+    @media (max-width: 600px) {
+      .banner-image {
+        height: 200px;
+      }
+      .section-image.contact-img img {
+        height: 200px;
+      }
     }
 
     .hero .cta {
@@ -169,9 +166,6 @@
       display: block;
       object-fit: cover;
     }
-
-    .section-image.about-img { max-height: 280px; }
-    .section-image.about-img img { width: 100%; height: 280px; object-fit: cover; }
 
     .section-image.contact-img { max-height: 220px; }
     .section-image.contact-img img { width: 100%; height: 220px; object-fit: cover; }
@@ -302,7 +296,7 @@
 <body>
   <nav>
     <div class="container">
-      <a class="nav-logo" href="#">Scriben Services</a>
+      <a class="nav-logo" href="#">Scriben Services Limited</a>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#what-we-do">What we do</a>
@@ -313,25 +307,22 @@
 
   <header class="hero">
     <div class="container">
-      <h1>Scriben Services</h1>
+      <h1>Scriben Services Limited</h1>
       <p class="tagline">Professional services, Manchester.</p>
       <p class="intro">We deliver reliable, tailored support for businesses and individuals. Based in Manchester, we focus on clarity, quality, and a straightforward approach to getting things done.</p>
       <a class="cta" href="#contact">Get in touch</a>
     </div>
   </header>
 
+  <div class="banner-image-wrap">
+    <img class="banner-image" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80" alt="Manchester" loading="lazy">
+  </div>
+
   <main>
     <section id="about">
       <div class="container">
-        <div class="section-image about-img">
-          <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80" alt="Professional workspace" loading="lazy">
-        </div>
         <h2>About us</h2>
-        <p class="section-intro">Scriben Services is a UK-registered company providing professional services from our base in Manchester. We are committed to high standards and clear communication with every client.</p>
-        <div class="detail-block">
-          <div class="detail-label">Director</div>
-          <div class="detail-value">Jermaine Pinel</div>
-        </div>
+        <p class="section-intro">Scriben Services Limited is a UK-registered company providing professional services from our base in Manchester. We are committed to high standards and clear communication with every client.</p>
         <div class="detail-block">
           <div class="detail-label">Registered office</div>
           <div class="detail-value">14 Netherton Road<br>Manchester M14 7FN</div>
@@ -372,7 +363,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; Scriben Services. All rights reserved.</p>
+      <p>&copy; Scriben Services Limited. All rights reserved.</p>
     </div>
   </footer>
 </body>

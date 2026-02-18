@@ -1,8 +1,7 @@
-# Scriben Services
+# Scriben Services Limited
 
-Landing page for Scriben Services.
+Landing page for Scriben Services Limited.
 
-- **Director:** Jermaine Pinel  
 - **Address:** 14 Netherton Road, Manchester M14 7FN  
 - **Phone:** +44 330 808 1320  
 - **Email:** contact@scribenservices.com  
